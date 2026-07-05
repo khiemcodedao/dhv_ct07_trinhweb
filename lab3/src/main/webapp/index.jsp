@@ -2,6 +2,12 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Record" %>
 <%@ page import="dao.*" %>
+<%
+    if (session.getAttribute("user") == null) {
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+        return;
+    }
+%>
 
 <!DOCTYPE html>
 <html>
@@ -138,8 +144,8 @@ th.bovien
                 <td class="bovien" style="width:300px"><%=p.GetStname()%></td>
                     <td class="bovien" style="width:250px"><%=p.GetCourse()%></td>
                     <td class="bovien" style="width:100px"><%=p.GetFee()%></td>
-                    <td class="bovien" style="width:100px">Edit</td>
-                    <td class="bovien" style="width:100px">Delete</td>
+                    <td class="bovien" style="width:100px"><a href="edit.jsp?id=<%=p.GetId()%>">Edit</a></td>
+                    <td class="bovien" style="width:100px"><a href="delete?id=<%=p.GetId()%>" onclick="return confirm('Xóa sinh viên này?');">Delete</a></td>
 
              </tr>
 
@@ -158,4 +164,3 @@ th.bovien
 
 </body>
 </html>
-
