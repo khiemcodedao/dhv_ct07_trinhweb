@@ -33,9 +33,9 @@
         }
 
         .login-box {
-            width: 400px;
+            width: 600px;
             padding: 30px;
-            background-color: #eaf5d7;
+            background-color: #0e6379;
             margin-top: 50px;
         }
 
@@ -50,7 +50,7 @@
     <div id="container">
         <div class="login-box">
 
-            <h1>Đăng nhập</h1>
+            <h1 style= "color: white;" >Đăng nhập</h1>
 
             <% if (request.getAttribute("error") != null) { %>
                 <p class="error"><%= request.getAttribute("error") %></p>
@@ -59,17 +59,17 @@
             <form id="login_form" action="login" method="post">
 
                 <div class="form_group">
-                    <label for="username">Username</label>
+                    <label for="username"  style= "color: white;">Username</label>
                     <input id="username" name="username"/>
                 </div>
 
                 <div class="form_group">
-                    <label for="password">Password</label>
+                    <label for="password" style= "color: white;">Password</label>
                     <input id="password" name="password" type="password"/>
                 </div>
 
                 <div>
-                    <button type="submit">Đăng nhập</button>
+                    <button type="submit" style= "background: yellow;">Đăng nhập</button>
                 </div>
 
             </form>
